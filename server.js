@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const path = require('path');
 
 const decks = require("./routes/api/decks");
 
@@ -22,6 +23,16 @@ mongoose
 
 // Use Routes
 app.use("/api/decks", decks);
+
+// Serve static assets if in production
+if (process.env.NODE_ENV === 'production') {
+  // Set static folder
+  app.use(express.static('longboard-base-web/build'));
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'longboard-base-web', 'build', 'index.html'));
+  });
+}
 
 const port = process.env.PORT || 5000;
 

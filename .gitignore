@@ -9,6 +9,9 @@
 # config variables
 /config
 
+# client folder
+/longboard-base-web
+
 # misc
 .DS_Store
 .env.local
