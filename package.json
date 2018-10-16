@@ -1,0 +1,23 @@
+{
+  "name": "longboard-base-server",
+  "version": "1.0.0",
+  "description": "A database of longboard decks",
+  "main": "server.js",
+  "scripts": {
+    "client-install": "cd ../longboard-base-web && npm install",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "cd ../longboard-base-web && npm start",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "author": "Chris Sandvik",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^4.0.1",
+    "express": "^4.16.3",
+    "mongoose": "^5.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.4"
+  }
+}
