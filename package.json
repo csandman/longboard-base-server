@@ -8,8 +8,7 @@
     "start": "node server.js",
     "server": "nodemon server.js",
     "client": "cd ../longboard-base-web && npm start",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-portbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix longboard-base-web && npm run build --prefix longboard-base-web"
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Chris Sandvik",
   "license": "ISC",
