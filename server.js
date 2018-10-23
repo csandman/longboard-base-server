@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const path = require('path');
+require("dotenv").config();
 
 const decks = require("./routes/api/decks");
 
@@ -10,7 +11,7 @@ const app = express();
 app.use(express.json());
 
 // DB Config
-const db = require("./config/keys").MONGO_URI;
+const db = process.env.MONGO_URI;
 
 // Connect to Mongo
 mongoose
