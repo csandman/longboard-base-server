@@ -13,6 +13,14 @@ router.get("/", (req, res) => {
     .then(decks => res.json(decks));
 });
 
+// @route  GET api/deck
+// @desc   Get single decks
+// @access Public
+router.get("/:fileName", (req, res) => {
+  Deck.findOne({fileName: req.params.fileName})
+    .then(deck => res.json(deck));
+});
+
 // @route  POST api/decks
 // @desc   Add a deck
 // @access Public
