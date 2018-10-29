@@ -7,32 +7,18 @@ const DeckSchema = new Schema({
     type: String,
     required: true
   },
-  fileName: {
-    type: String
-  },
-  brand: {
-    type: String
-  },
-  construction: {
-    type: String
-  },
-  deckShape: {
-    type: String
-  },
-  youtubeLink: {
-    type: String
-  },
-  length: {
-    type: Number
-  },
-  width: {
-    type: Number
-  },
-  wheelbaseMin: {
-    type: Number
-  },
-  wheelbaseMax: {
-    type: Number
+  fileName: String,
+  brand: String,
+  youtubeLink: String,
+  specs: {
+    construction: String,
+    shape: String,
+    length: Number,
+    width: Number,
+    wheelbase: {
+      min: Number,
+      max: Number
+    }
   }
 });
 
